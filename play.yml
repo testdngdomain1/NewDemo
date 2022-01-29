@@ -1,9 +1,10 @@
-hosts: kubernetes
-become: true
-tasks:
-- name: Copy Manifest Files to Kubernetes
-  copy:
-    src: /opt/project/workspace/NewDemo/service-new.yml
-    dest: /root/kubernetes/service-new.yml
-- name: Start Kubernetes Service
-  command: kubectl apply -f /root/kubernetes/service-new.yml
+---
+- hosts: kubernetes
+  become: true
+  tasks:
+  - name: Copy Manifest Files to Kubernetes
+    copy:
+      src: /opt/project/workspace/NewDemo/service-new.yml
+      dest: /root/kubernetes/service-new.yml
+  - name: Start Kubernetes Service
+    command: kubectl apply -f /root/kubernetes/service-new.yml
