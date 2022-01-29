@@ -1,6 +1,6 @@
 ---
 - hosts: kubernetes
-  become: true
+  user: root
   tasks:
   - name: Copy Manifest Files to Kubernetes
     copy:
