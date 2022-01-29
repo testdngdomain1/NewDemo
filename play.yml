@@ -6,4 +6,4 @@ tasks:
     src: /opt/project/workspace/NewDemo/service-new.yml
     dest: /root/kubernetes/service-new.yml
 - name: Start Kubernetes Service
-  command: kubectl apply -f /root/kubernetesservice-new.yml
+  command: kubectl apply -f /root/kubernetes/service-new.yml
