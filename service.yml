@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
             - name: webapps
-              image: bijoyashis/chodna:DOCKER_TAG
+              image: bijoyashis/xyz:DOCKER_TAG
               imagePullPolicy: Always
               ports:
               - containerPort: 8080
