@@ -4,6 +4,6 @@ tasks:
 - name: Copy Manifest Files to Kubernetes
   copy:
     src: /opt/project/workspace/NewDemo/service-new.yml
-    dest: /root/service-new.yml
+    dest: /root/kubernetes/service-new.yml
 - name: Start Kubernetes Service
-  command: kubectl apply -f /root/service-new.yml
+  command: kubectl apply -f /root/kubernetesservice-new.yml
