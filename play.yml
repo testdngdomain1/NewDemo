@@ -1,0 +1,11 @@
+---
+- hosts: kubernetes
+  become: true
+  user: root
+  tasks:
+  - name: Copy Kubernetes Manifest File to Kubernetes Master
+    copy:
+      src: /opt/project/workspace/Kubernetes-Demo/myapp-deploy-new.yml
+      dest: /home/jenkins/project/
+  - name: Deploy build on Kubernetes Cluster
+    command: kubectl apply -f /root/service.yml
