@@ -1,3 +1,0 @@
-FROM tomcat:9.0
-RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
-COPY /opt/project/workspace/Kubernetes-Demo/target/dockeransible.BUILD_NUMBER.war /usr/local/tomcat/webapps
