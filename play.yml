@@ -1,7 +1,6 @@
 ---
 - hosts: kubernetes
   become: true
-  user: jenkins
   tasks:
   - name: Copy Kubernetes Manifest File to Kubernetes Master
     copy:
