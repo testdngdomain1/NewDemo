@@ -1,11 +1,17 @@
 ---
 - hosts: kubernetes
   become: true
-  user: root
+  user: jenkins
   tasks:
   - name: Copy Kubernetes Manifest File to Kubernetes Master
     copy:
       src: /opt/project/workspace/Kubernetes-Demo/myapp-deploy-new.yml
-      dest: /home/jenkins/project/
+      dest: /home/jenkins/project/myapp-deploy-new.yml
+  - name : Copy Kubernetes Secret File to Kubernetes Master
+    copy: 
+        src: /opt/project/workspace/Kubernetes-Demo/myapp-secret.yml
+        dest: /home/jenkins/project/myapp-secret.yml
+  - name: Create Secret on Kubernetes Master
+    command: kubectl apply -f /home/jenkins/project/myapp-secret.yml
   - name: Deploy build on Kubernetes Cluster
-    command: kubectl apply -f /root/service.yml
+    command: kubectl apply -f /home/jenkins/project/myapp-deploy-new.yml
